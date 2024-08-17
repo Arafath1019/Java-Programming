@@ -37,3 +37,8 @@ $ javac Hello.java
 Run the Byte file using class name
 $ java Hello
 ```
+
+### Variables in java
+* Java is strongly types language
+* Variable assignment in java:
+data_type (int/string/boolean) variable_name = value;
