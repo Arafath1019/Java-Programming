@@ -70,3 +70,74 @@ Type Casting -> Explicitly convert one type of data into another type is called 
 float f = 5.6f;
 int x = (int) f;
 ```
+
+### Assignment Operators
+Assignment Operators are: +, -, *, /, %, +=, -=, *=, /=, %=, ++ (incrementing operator), -- (decrementing operator)
+    - Pre-incrementing: ++a
+    - Post-incrementing: a++
+    - Pre-decrementing: --a
+    - Post-decrementing: a--
+
+### Relational Operators
+Relational Operators are: <, >, ==, !=, <=, >=
+
+### Logical Operators
+Logical Operators are: AND -> &&, OR -> ||, NOT -> !
+
+### Conditional Statements
+if-else statement:
+```
+if (condition) {
+    // Code ....
+} else {
+    // Code ...
+}
+```
+
+if-else if statement:
+```
+if (condition){
+    // code ...
+} else if (condition){
+    // code ....
+} else {
+    // Code ....
+}
+```
+
+Ternary Operator: 
+codition ? if condition is true then it will be run : other than if the condition is false then run this
+
+### Switch Statement in java
+```
+public class Demo {
+    public static void main(String a[]){
+        int n = 8;
+        switch(n){
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3: 
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Please enter a valid number")
+        }
+    }
+}
+```
