@@ -141,3 +141,29 @@ public class Demo {
     }
 }
 ```
+
+### While Loop
+```
+while(condition)
+{
+    // Code....
+    Increment/decrement;
+}
+```
+
+### Do While Loop
+```
+do 
+{
+    // Code ....
+    increment/decrement;
+}while(condition);
+```
+
+### For loop
+```
+for(initialization; condition; increment/decrement)
+{
+    // Code ....
+}
+```
