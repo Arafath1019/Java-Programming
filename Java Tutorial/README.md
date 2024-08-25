@@ -172,3 +172,6 @@ for(initialization; condition; increment/decrement)
 * Object - Properties & Behaviours (methods)
 * Class
 * JVM create objects from java class
+
+### JDK, JRE & JVM
+<img src="images/2.png" height="auto" width="auto" />
