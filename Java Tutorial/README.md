@@ -175,3 +175,15 @@ for(initialization; condition; increment/decrement)
 
 ### JDK, JRE & JVM
 <img src="images/2.png" height="auto" width="auto" />
+
+### Stack and Heap
+In the Java Virtual Machine (JVM), stack and heap are two types of memory that the JVM allocates to store different types of data.
+* Heap: Used to store objects and class instances, and is created by the JVM when it starts. Heap memory is used by all parts of the application and can store larger amounts of data. Heap memory is more flexible and can be accessed at any time, but it's also more complex because it's used globally. 
+
+* Stack: Used for the execution of a thread, and is temporary memory when variables values are stored when their methods are invoked. Stack memory is thread specific and each thread has its own stack. Stack is a linear data structure that stores items in last in first out (LIFO) manner. Stack memory is used to manage method calls and local variables.
+
+* Local variable: An auxiliary temporary variable that exists only while a particular function or a block of statements is executed.
+
+* Instance variable: Is a class property that can be different for each object.
+
+<img src="images/3.png" height="auto" width="auto" />
