@@ -189,7 +189,26 @@ In the Java Virtual Machine (JVM), stack and heap are two types of memory that t
 <img src="images/3.png" height="auto" width="auto" />
 
 ### Array
+* One dimensional array
 ```
 int num[] = {1,2,3};
 int num1[] = new int[4];
+```
+
+* Multi dimensional array
+```
+int num2[][] = new int[3][4];
+```
+
+* Loop through multi-dimensional array
+```
+int num2[][] = new int[3][4];
+
+for(int n[]: num2)
+{
+    for(int m: n)
+    {
+        System.out.println(m);
+    }
+}
 ```
