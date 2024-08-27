@@ -187,3 +187,9 @@ In the Java Virtual Machine (JVM), stack and heap are two types of memory that t
 * Instance variable: Is a class property that can be different for each object.
 
 <img src="images/3.png" height="auto" width="auto" />
+
+### Array
+```
+int num[] = {1,2,3};
+int num1[] = new int[4];
+```
