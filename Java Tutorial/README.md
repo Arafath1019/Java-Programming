@@ -212,3 +212,14 @@ for(int n[]: num2)
     }
 }
 ```
+
+### Drawbacks of array in java
+* Fixed size
+* Lack of flexibility
+* Inefficient Insertions & Deletions
+* Limited methods
+* Memory Wastage
+* Inability to Resize
+* Homogeneous Data Types
+* Limited support of Functional Programming
+* Difficulty in Sorting & Searching
