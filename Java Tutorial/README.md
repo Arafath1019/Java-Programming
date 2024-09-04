@@ -223,3 +223,32 @@ for(int n[]: num2)
 * Homogeneous Data Types
 * Limited support of Functional Programming
 * Difficulty in Sorting & Searching
+
+### String in Java
+<img src="images/4.png" height="auto" width="auto" />
+
+### Mutable vs Immutable
+Mutable String: The mutable objects are objects whose value can be changed after initialization.
+Immutable String: The immutable objects are objects whose value can not be changed after initialization.
+String class is an immutable class
+
+### String Buffer vs String Builder
+StringBuffer and StringBuilder classes are mutable.
+String Buffer: String buffer is a peer class of string that provides much of the functionality of strings. StringBuffer represents growable and writable character sequences.
+```
+StringBuffer str = new StringBuffer("Hello World");
+```
+StringBuilder: Similar to StringBuffer, the StringBuilder in java represents a mutable sequence of characters. It creates a mutable sequence of characters.
+```
+StringBuilder str = new StringBuilder("Hello World");
+```
+
+### Assigning StringBuffer data into String
+```
+StringBuffer sb = new StringBuffer("Hello World");
+String str = sb.toString();
+```
+
+### Difference between StringBuffer and StringBuilder
+* StringBuffer is thread safe. It means two threads can't call the methods of StringBuffer simultaneously. But StringBuilder is not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+* StringBuffer is less efficient than StringBuilder
