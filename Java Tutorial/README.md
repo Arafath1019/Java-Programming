@@ -252,3 +252,79 @@ String str = sb.toString();
 ### Difference between StringBuffer and StringBuilder
 * StringBuffer is thread safe. It means two threads can't call the methods of StringBuffer simultaneously. But StringBuilder is not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
 * StringBuffer is less efficient than StringBuilder
+
+### Static Variable
+When a variable is declared static, it means that the variable belongs to the class itself rather than to any specific instance of the class.
+
+```
+class Mobile {
+    static String name; // This static variable is called class variable
+    String brand; // This variable is called instance variable
+}
+
+public class Demo {
+    public static void main(String a[]){
+        Mobile mobile = new Mobile();
+        mobile.brand = "Apple";
+        Mobile.name = "iPhone";
+
+        System.out.println(mobile.brand);
+        System.out.println(Mobile.name);
+    }
+}
+```
+
+### Static Block
+A static block is a set of instructions that is run only once when a class is loaded into memory.
+There are two steps:
+* Class Loads
+* Objects are instantiated.
+
+```
+class Mobile {
+    String brand;
+    int price;
+    static String name;
+
+    // Static Block - executes only once when the class is loaded
+    static {
+        name = "Phone";
+    }
+
+    // Constructor - executes every time when any instance is created
+    public Mobile() {
+        brand = "";
+        price = 200;
+    }
+}
+```
+
+* Class.forName(class_name); -> To load any class in memory
+
+### Static Method
+Static method is a method which belongs to the class and not to the object. A static method can access only static data. A static method can call only other static methods and can not call a not-static method from it.
+
+```
+class Mobile {
+    String brand;
+    int price;
+    static String name;
+
+    public void show() {
+        System.out.println(brand + " : " + price + " : " + name);
+    }
+
+    public static void show1(Mobile obj){
+        System.out.println(obj.brand + " : " + obj.price + " : " + name);
+    }
+}
+
+public class Demo {
+    public static void main(String a[]){
+        Mobile obj1 = new Mobile();
+
+        obj1.show();
+        Mobile.show1();
+    }
+}
+```
