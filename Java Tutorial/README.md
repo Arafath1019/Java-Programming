@@ -328,3 +328,42 @@ public class Demo {
     }
 }
 ```
+
+### Encapsulation
+In encapsulation, a class's variables are hidden from other classes and can only be accessed by the methods of the class in which the are found.
+
+```
+class Human 
+{
+    private int age;
+    private String name;
+
+    public int getAge(){
+        return age;
+    }
+
+    public void setAge(int a){
+        this.age = a;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String n){
+        this.name = n;
+    }
+}
+
+class Demo
+{
+    public static void main(String a[]){
+        Human human = new Human();
+
+        human.setName("Yeasin");
+        human.setAge(25);
+
+        System.out.println(human.getName + " : " + human.getAge);
+    }
+}
+```
