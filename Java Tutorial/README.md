@@ -367,3 +367,37 @@ class Demo
     }
 }
 ```
+
+### this keyword in java
+This keyword refers to the current object in a method or constructor.
+
+### constructor in java
+```
+class Human 
+{
+    private String name;
+
+    public Human(){
+        this.name = 'Yeasin'
+    }
+
+    public Human(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+}
+
+class Demo
+{
+    public static void main(String a[]){
+        Human human1 = new Human();
+        Human human2 = new Human("Arafath");
+
+        System.out.println(human1.getName());
+        System.out.println(human2.getName());
+    }
+}
+```
