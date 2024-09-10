@@ -401,3 +401,52 @@ class Demo
     }
 }
 ```
+
+### super() vs this() in java
+super keyword & super() constructor: A reserved keyword used to call the base class methods or variable is known as a super keyword. We cannot use the super keyword as an identifier. The super keyword is not only used to refer to the base class instance but also static members too.
+
+The super() is mainly used for invoking base class member functions and constructors.
+
+```
+class Animal {
+    String color = white";
+}
+
+class Cat extends Animal {
+    Cat(){
+        String color = "Brown";
+        System.out.println("The cat is of color: " + super.color);
+        System.out.println("The cat is of color " + color);
+    }
+}
+
+class SuperClassExample extends Cat {
+    SuperClassExample(){
+        super();
+        System.out.println("The eyes of the cat is blue.");
+    }
+}
+```
+
+this() constructor: this() constructor refers to the current class object.
+
+```
+class ThisExample {
+    int x = 5;
+    staticinty = 10;
+
+    ThisExample() {
+        this(5);
+        System.out.println(We are inside of the default constructor);
+        System.out.println("The value of x = " + x);
+    }
+
+    ThisExample(int x) {
+        this.x = x;
+        System.out.println("We are inside of the parameterized constructor");
+        System.out.println("The value of x " + x);
+    }
+}
+```
+
+*** Note: Every class extends Object class & every constructor calls super() if we don't defined.
