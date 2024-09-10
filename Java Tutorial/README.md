@@ -450,3 +450,9 @@ class ThisExample {
 ```
 
 *** Note: Every class extends Object class & every constructor calls super() if we don't defined.
+
+### Naming convention in java
+* Camel casing
+* class name should be start with Capital (example: Calculator, Runable)
+* Variable methods name should be start with small-letters (example: showMyMarks, fixedDeposit)
+* Constant should be all Capital. (example: PIE, BRAND)
