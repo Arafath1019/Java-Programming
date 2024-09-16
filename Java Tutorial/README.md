@@ -511,3 +511,21 @@ class AdvancedCalculator extends Calculator {
 * Single level inheritance: Calc -> AdvCalc
 * Multi-level inheritance: Calc -> AdvCalc -> VeryAdvCalc
 * Java does not support multiple inheritance. 
+
+### Method Overriding
+Overriding is a feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes. When a method in a subclass has the same name, te same parameters or signature and the same return type as a method in its super class then the method in the subclass is said to override the method in the super class.
+
+```
+class Parent {
+    void show() {
+        System.out.println("Parents show()");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void show() {
+        System.out.println("Childs show()");
+    }
+}
+```
