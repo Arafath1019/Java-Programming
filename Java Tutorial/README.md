@@ -481,3 +481,33 @@ public class Main {
     }
 }
 ```
+
+### Inheritance
+Inheritance is the mechanism by which one class(child, sub, derived) is allowed to inherit the features(fields and methods) of another class(Parent, super, base). In java inheritance means creating new classes based on existing ones. A class that inherits from another class can reuse the methods and fields of that class. In addition, can add new fields and methods to current class as well.
+
+##### Why do we need java inheritance?
+* Code reusability
+* Method overriding
+* Abstraction
+
+```
+class Calculator {
+    public int add(int num1, int num2){
+        return num1 + num2;
+    }
+
+    public int sub(int num1, int num2){
+        return num1 - num2;
+    }
+}
+
+class AdvancedCalculator extends Calculator {
+    public int mult(int num1, int num2) {
+        return num1 * num2;
+    }
+}
+```
+
+* Single level inheritance: Calc -> AdvCalc
+* Multi-level inheritance: Calc -> AdvCalc -> VeryAdvCalc
+* Java does not support multiple inheritance. 
