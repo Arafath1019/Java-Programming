@@ -551,7 +551,15 @@ package mypack;
 
 class MyPackageClass {
     public static void main(String[] args) {
-        
+
     }
 }
 ```
+
+### Access Modifiers
+* Private: Accessible from same class is YES, but from same package subclass, same package non-subclass, different package subclass and different package non-subclass is NO.
+
+* Protected: Accessible from same class, same package subclass, same package non-subclass, different package subclass is YES, but from different package non-subclass is NO.
+
+* Public: Accessible from all
+* Default: Accessible from same class, same package subclass, same package non-subclass is YES, but from different package subclass, different package non-subclass is NO.
