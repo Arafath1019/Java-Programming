@@ -529,3 +529,29 @@ class Child extends Parent {
     }
 }
 ```
+
+### Package
+A set of classes and interfaces grouped together are known as Packages in Java. Packages are used to avoid name conflict and to write a better maintainable code. Packages are divided into two categories:
+* Built-in packages
+* Used-defined packages
+
+##### Built-in Packages
+THe Java Api is a library of prewritten classes. 
+```
+# Import a package
+import java.util.*;
+
+# Import a class
+import java.util.Scanner;
+```
+
+##### User defined packages
+```
+package mypack;
+
+class MyPackageClass {
+    public static void main(String[] args) {
+        
+    }
+}
+```
