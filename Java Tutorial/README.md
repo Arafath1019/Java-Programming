@@ -456,3 +456,28 @@ class ThisExample {
 * class name should be start with Capital (example: Calculator, Runable)
 * Variable methods name should be start with small-letters (example: showMyMarks, fixedDeposit)
 * Constant should be all Capital. (example: PIE, BRAND)
+
+### Anonymous Object
+An anonymous object is an object that is created without giving it a name. Anonymous objects are often used to create objects on the fly and pass them as arguments to methods.
+
+```
+class Person {
+    String name;
+    int age;
+
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void display() {
+        System.out.println("Name: " + this.name + ", Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        new Person("John", 20).display();
+    }
+}
+```
