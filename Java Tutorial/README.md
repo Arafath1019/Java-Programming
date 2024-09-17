@@ -563,3 +563,10 @@ class MyPackageClass {
 
 * Public: Accessible from all
 * Default: Accessible from same class, same package subclass, same package non-subclass is YES, but from different package subclass, different package non-subclass is NO.
+
+### Polymorphism in Java
+It means 'having many forms'. Polymorphism allows to perform a single action in different ways. Polymorphism allows to define one interface and have multiple implementations.
+
+Types of Java Polymorphism:
+* Compile-time polymorphism (Example: Method overloading)
+* Run-time polymorphism (Example: Method overriding)
