@@ -593,3 +593,27 @@ public class Main {
     }
 }
 ```
+
+### final keyword
+The final keyword is a non-access modifier used for classes, attributes and methods, which makes them non-changeable(Impossible to inherit or override).
+The final keyword is useful when want a variable to always store the same value.
+
+Final keyword have three use cases:
+1. variable
+```
+class Person {
+    final int num = 8;
+}
+```
+
+2. method
+```
+class Calc {
+    public final void show() {
+        ....
+    }
+}
+```
+
+3. class
+Prevents inheritance from a class
