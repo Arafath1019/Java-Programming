@@ -570,3 +570,26 @@ It means 'having many forms'. Polymorphism allows to perform a single action in 
 Types of Java Polymorphism:
 * Compile-time polymorphism (Example: Method overloading)
 * Run-time polymorphism (Example: Method overriding)
+
+### Dynamic Method Dispatch or Run-time polymorphism in java
+Method overriding is one of the ways in which java supports Runtime Polymorphism. Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at the run time, rather than compile time.
+```
+class A {
+    public void show() {
+        System.out.println("In A show");
+    }
+}
+
+class B extends A {
+    public void show() {
+        System.out.println("In B Show");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        A obj = new B();
+        obj.show();
+    }
+}
+```
