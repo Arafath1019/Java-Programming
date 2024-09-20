@@ -617,3 +617,27 @@ class Calc {
 
 3. class
 Prevents inheritance from a class
+
+### Object Class equals toString hashcode
+* Every class in Java extends Object class by default
+* toString() -> If want to represent any object as a string, toString() method is used. It returns the String representation of the object.
+* hashcode() -> It returns the hash code for the Method class object. It computes the hash values of the given objects and returns an integer representing the hash value of the input object.
+* equals() -> It implements the most discriminating possible equivalence relation on objects.
+
+```
+class A {
+
+}
+
+public class Demo {
+    public static void main(String a[]) {
+        A obj1 = new A();
+        obj1.hashcode() -> this hashcode method comes from Object class which is by default inherited in class A
+        obj1.toString();
+
+        A obj2 = new A();
+        boolean result = obj1.equals(obj2);
+        System.out.println(result); -> this will return false
+    }
+}
+```
