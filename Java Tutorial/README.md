@@ -641,3 +641,76 @@ public class Demo {
     }
 }
 ```
+
+### Type Casting
+Type casting is when assign a value of one primitive data type to another type. In java there are two types of casting:
+1. Widening casting (Automatically) -> converting a smaller type to a larger type size
+byte -> short -> char -> int -> long -> float -> double
+2. Narrowing Casting (Manually) -> Converting a larger type to a smaller size type
+double -> float -> long -> int -> char -> short -> byte
+
+```
+public class Main {
+    public static void main(String a[]){
+        // Widening Casting
+        int myInt = 9;
+        double myDouble = myInt; // Automatic casting: int to double
+
+        // Narrowing casting
+        double myDouble = 9.78d;
+        int myInt = (int) myDouble;
+    }
+}
+```
+
+### Upcasting
+It is the typecasting of a child object to a parent object. Upcasting can be done implicitly.
+* Child object -> Parent Object
+
+```
+class A {
+    public void show1 () {
+        System.out.println("In show A");
+    }
+}
+
+class B extends A {
+    public void show2() {
+        System.out.println("In show B");
+    }
+}
+
+public class Demo {
+    public static void main(String[] a) {
+        A obj = (A) new B();
+        obj.show1();
+    }
+}
+```
+
+### DownCasting
+Downcasting means the typecasting of a parent object to a child object.
+* Parent Object -> Child Object
+
+```
+class A {
+    public void show1 () {
+        System.out.println("In show A");
+    }
+}
+
+class B extends A {
+    public void show2() {
+        System.out.println("In show B");
+    }
+}
+
+public class Demo {
+    public static void main(String[] a) {
+        A obj = new B();
+
+        B obj1 = (B) obj;
+        obj1.show2();
+    }
+}
+```
