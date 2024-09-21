@@ -747,3 +747,45 @@ public class Demo {
     }
 }
 ```
+
+### Inner class
+In java, it is also possible to nest classes (a class within a class). The purpose of nested classes is to group classes that belong together, which makes your code more readable and maintainable. An inner class can be private or protected. 
+An inner class can also static, which means that it can be accessed without creating an object of the outer class.
+
+
+```
+class OuterClass {
+    int x = 10;
+
+    class InnerClass {
+        int y = 5;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OuterClass myOuter = new OuterClass();
+        OuterClass.InnerClass myInner = myOuter.new InnerClass();
+
+        System.out.println(myInner.y + myOuter.x);
+    }
+}
+```
+
+```
+class OuterClass {
+    int x = 10;
+
+    static class InnerClass {
+        int y = 5;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OuterClass.InnerClass myInner = new OuterClass.InnerClass();
+
+        System.out.println(myInner.y);
+    }
+}
+```
