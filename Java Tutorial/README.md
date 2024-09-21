@@ -714,3 +714,36 @@ public class Demo {
     }
 }
 ```
+
+
+### Abstract Keyword 
+Data abstraction is the process of hiding certain details and showing only essential information to the user. Abstraction can be achieved with either abstract class or interfaces.
+The abstract key word is a non-access modifier, used for classes and methods.
+* Abstract class: Is a restricted class that cannot be used to create objects (To access it, must be inherited from another class)
+* Abstract method: Can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from)
+* An abstract class can have both abstract and regular methods.
+* In an abstract class, there is no restriction to have an abstract method inside it. There can be or can not be abstract method. Its optional
+
+```
+abstract class Car {
+    public abstract void drive();
+
+    public void playMusic() {
+        System.out.println("Play music");
+    }
+}
+
+class WagonR extends Car {
+    public void drive() {
+        System.out.println("Driving");
+    }
+}
+
+public class Demo {
+    public static void main(String a[]) {
+        WagonR obj = new WagonR();
+        obj.drive();
+        obj.playMusic();
+    }
+}
+```
