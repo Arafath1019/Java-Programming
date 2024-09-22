@@ -812,3 +812,89 @@ class AnonymousInner {
     }
 }
 ```
+
+### Interface in Java
+Interface in java programming language is defined as an abstract type used to specify the behavior of a class. An interface in java is a blueprint of a behavior. A java interface contains static constants and abstract methods.
+
+### What are Interfaces in Java?
+The interface in Java is a mechanism is achieve abstraction. Traditionally, an interface could only have abstract methods (methods without a body) and public, static and final variables by default. It is used to achieve abstraction and multiple inheritances in java. In other words, interfaces primarily define methods that other classes must implement. Java interface also represents the IS-A relationship.
+In java, the abstract keyword applies only to classes and methods, indicating that they cannot be instantiated directly and must be implemented.
+
+When decide on a type of entity by its behavior and not via attribute we should define it as an interface.
+
+Syntax for Java Interfaces
+```
+interface {
+    // declare constant fields
+    // declare methods that abstract
+    // by default
+}
+```
+
+### Uses of Interfaces in Java
+* It is used to achieve total abstraction
+* Since java does not support multiple inheritances in the case of class, by using an interface it can achieve multiple inheritances
+* Any class can extend only one class, but can implement multiple interfaces
+* It is also used to achieve loose coupling
+* Interfaces are used to implement abstraction
+
+The reason is, abstract classes may contain non-final variables, whereas variables in the interface are final, public and static.
+
+```
+interface Player {
+    final int id = 10;
+    int move();
+}
+```
+
+### Relationship between class and interface
+* class ----extends----> class
+* class -----implements----> interface
+* interface ---extends---> interface
+
+```
+interface In1 {
+    final int a = 10;
+    void display();
+}
+
+class TestClass implements In1 {
+    public void display() {
+        System.out.println("Geek");
+    }
+}
+```
+
+### Advantages of Interfaces in Java
+* Without bothering about the implementation part, we can achieve the security of the implementation.
+* In Java, multiple inheritances are not allowed, however, you can use an interface to make use of it as you can implement more than one interface.
+
+### Multiple inheritance in java using interface
+* class ----implements----> interface1, interface2
+* interface ---extends---> interface1, interface2
+
+```
+interface API {
+    default void show(){
+        System.out.println("Default API");
+    }
+}
+
+interface Interface1 extends API {
+    void display();
+}
+
+interface Interface2 extends API {
+    void print();
+}
+
+class TestClass implements Interface1, Interface2 {
+    public void display() {
+        System.out.println("Display from interface1");
+    }
+
+    public void print() {
+        System.out.print("Print from interface1");
+    }
+}
+```
