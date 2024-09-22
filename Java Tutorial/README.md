@@ -789,3 +789,26 @@ public class Main {
     }
 }
 ```
+
+
+### Anonymous Inner Class
+Java anonymous inner class is an inner class without a name and for which only a single object is created. An anonymous inner class can be useful when making an instance of an object with certain "extras" such as overloading methods of a class or interface, without having to actually subclass a class.
+
+```
+abstract class Person {
+    abstract void eat();
+}
+
+class AnonymousInner {
+    public static void main(String args[]) {
+        Person p = new Person()
+        {
+            void eat() {
+                System.out.println("Anonymous");
+            }
+        };
+
+        p.eat();
+    }
+}
+```
