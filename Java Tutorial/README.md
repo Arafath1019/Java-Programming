@@ -898,3 +898,94 @@ class TestClass implements Interface1, Interface2 {
     }
 }
 ```
+
+
+### Enumeration (enum)
+Enum is a special data type that consists of a set of pre-defined names values separated by commas. These named values are also known as elements or enumerators or enum instances. Since the values in the enum type are constant, they should be always represented by in UPPERCASE letters.
+
+```
+enum Status {
+    RUNNING, FAILED, PENDING, SUCCESS
+}
+
+public class Demo {
+    public static void main(String a[]){
+        Status s = Status.RUNNING;
+        System.out.println(s);
+        System.out.println(s.ordinal()); // Return the index value of RUNNING 
+
+        Status[] ss = Status.values();
+
+        for(Status s : ss) {
+            System.out.println(s);
+        }
+
+
+
+        Status s = Status.RUNNING;
+
+        if(s == Status.RUNNING) {
+            System.out.println("All Good");
+        } else if (s == Status.FAILED) {
+            System.out.println("Try Again");
+        } else if (s == Status.PENDING) {
+            System.out.println("Please wait");
+        } else {
+            System.out.println("Done");
+        }
+
+
+
+        switch(s) {
+            case RUNNING:
+                System.out.println("All Good");
+                break;
+            case Failed:
+                System.out.println("Try Again");
+                break;
+            case Pending:
+                System.out.println("Please wait");
+                break;
+            default:
+                System.out.println("Done");
+                break;
+        }
+    }
+}
+```
+
+
+### enum class
+An enum is a special class that represents a group of constants (unchangeable variables, like final variables). In java, enum types are considered to be a special type of class. By default enum in java extends enum class.
+
+```
+enum Laptop {
+    Macbook(2000), XPS(2200), Surface(1500), ThinkPad(1800);
+
+    private int price;
+
+    private Laptop(int price) {
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int setPrice(int price) {
+        this.price = price;
+    }
+}
+
+public class Demo {
+    public static void main(String a[]){
+
+        Laptop lap = Laptop.Macbook;
+        System.out.println(lap + ' : ' + lap.getPrice());
+
+        for(Laptop laptop : Laptop.values()) {
+            System.out.println(laptop + ' : ' + laptop.getPrice());
+        }
+    }
+}
+```
