@@ -1041,3 +1041,43 @@ These are the annotations that can be applied to a single item more than once.
 
 ### Predefined / Standard Annotations
 @Retention, @Documented, @Target, @Inherited, @Deprecated, @Override, @SuppressWarnings etc.
+
+
+### Functional Interfaces in Java
+A functional interface is an interface that contains only one abstract method. They can have only one functionality to exhibit. A functional interface can have any number of default methods. Runnable, ActionListener and Comparable are some of the examples of functional interfaces.
+
+Functional interface is additionally recognized as Single Abstract Method Interfaces. In short, they are also known as SAM interfaces. Functional interfaces are interfaces that ensure that they include precisely only one abstract method. Functional interfaces are used and executed by representing the interface with an annotation called @FunctionalInterface. 
+
+```
+// Before Java 8, we had to create anonymous inner class objects or implement these interfaces
+
+class Test  {
+    public static void main(String args[]){
+        new Thread(new Runnable() {
+            @Override
+            public void run(){
+                System.out.println("New thread created");
+            }
+        }).start();
+    }
+}
+
+// Using functional Interface
+
+@FunctionalInterface
+interface A {
+    void show();
+}
+
+public class Demo {
+    public static void main(String a[]){
+        A obj = new A() {
+            public void show() {
+                System.out.println("In Show");
+            }
+        };
+
+        obj.show();
+    }
+}
+```
