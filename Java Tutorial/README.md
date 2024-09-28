@@ -989,3 +989,55 @@ public class Demo {
     }
 }
 ```
+
+
+### Annotation in Java
+Annotations are used to provide supplemental information about a program.
+* Annotations start with '@'
+* Annotations help to associate metadata (information) to the program elements
+* Annotations are not pure comments as they can change the way a program is treated by the compiler.
+* Annotations basically are used to provide additional information so could be an alternative to XML and java marker interfaces.
+
+### Hierarchy of Annotations in Java
+Two types of annotations.
+1. Standard(Built in) annotations
+    * General Purpose Annotations (@Override, @Deprecated, @SafeVarArgs, @SuppressWarnings, @FunctionalInterface)
+    * Meta Annotations (@Inherited, @Documented, @Target, @Retention, @Repeatable)    
+2. Custom Annotation
+
+```
+class Base {
+    public void display() {
+        System.out.println("Base Display()");
+    }
+}
+
+class Derived extends Base {
+    @Override
+    public void display() {
+        System.out.println("Derived display");
+    }
+}
+```
+
+### Categories of Annotations
+There are broadly 5 categories of annotations as listed:
+1. Marker Annotations
+The only purpose is to mark a declaration. These annotations contain no members and do not consist of any data. @Override, @TestAnnotation() are the examples of Marker annotation
+
+2. Single Value Annotations
+These annotations contain only one member and allow a shorthand form of specifying the value of the member. 
+@TestAnnotation("Testing");
+
+3. Full Annotations
+These annotations consist of multiple data members, names, values and pairs.
+@TestAnnotation(owner="Arafath", values="testing");
+
+4. Type Annotations
+These annotations can be applied to any place where a type is being used.
+
+5. Repeating Annotation
+These are the annotations that can be applied to a single item more than once. 
+
+### Predefined / Standard Annotations
+@Retention, @Documented, @Target, @Inherited, @Deprecated, @Override, @SuppressWarnings etc.
