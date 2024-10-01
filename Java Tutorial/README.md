@@ -1236,3 +1236,24 @@ public Demo {
     }
 }
 ```
+
+
+### Throws exception
+Throws is a keyword in java that is used in the signature of a method to indicate that this method might throw one of the listed type exceptions. The caller to these method has to handle the exception using a try-catch block.
+
+```
+class ThrowsExcep {
+    static void fun() throws IllegalAccessException {
+        System.out.println("Inside fun().");
+        throw new IllegalAccessException("Demo");
+    }
+
+    public static void main(String args[]) {
+        try {
+            fun();
+        } catch(IllegalAccessException e) {
+            System.out.println("Caught in main");
+        }
+    }
+}
+```
