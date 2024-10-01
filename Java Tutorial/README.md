@@ -1119,3 +1119,40 @@ Lambda Expression Parameters:
 ```
 (p1, p2) -> System.out.println("Multiple parameters: " + p1 + p2);
 ```
+
+
+### Types of Interfaces
+3 Types of interfaces in java.
+* Marker Interface: Marker interfaces are interfaces without any methods declared. 
+```
+import java.io.Serializable;
+
+// Marker Interface
+interface MyMarkerInterface extends Serializable {}
+
+public class MarkerInterfaceExample {
+    public static void main(String args[]) {
+        MyMarkerInterface obj = new MyMarkerInterface(){};
+
+        System.out.println(obj instanceof Serializable);
+    }
+}
+```
+
+* Functional Interface or Single Abstract Method (SAM) Interface
+An interface that has precisely one abstract method is said to be functional or Single Abstract Method interface. 
+```
+interface MySAMinterface {
+    void performAction();
+}
+
+public class SAMInterfaceExample {
+    public static void main(String args[]) {
+        MySAMInterface obj = () -> System.out.println("Performing action");
+        obj.performAction();
+    }
+}
+```
+
+* Normal Interface
+They have one or more abstract methods that the classes that implement the interface must implemented.
