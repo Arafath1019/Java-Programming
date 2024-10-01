@@ -1216,3 +1216,23 @@ Throw keyword is used to throw an exception explicitly.
 ```
 throw new ArithmeticException("Message");
 ```
+
+### Custom Exception
+
+```
+class CustomException extends Exception {
+    public CustomException(String string) {
+        super(string);
+    }
+}
+
+public Demo {
+    public static void main(String args[]) {
+        try {
+            throw new CustomException("Custom Exception Message");
+        } catch(CustomException e) {
+            System.out.println(e);
+        }
+    }
+}
+```
