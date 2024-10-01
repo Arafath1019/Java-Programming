@@ -1156,3 +1156,53 @@ public class SAMInterfaceExample {
 
 * Normal Interface
 They have one or more abstract methods that the classes that implement the interface must implemented.
+
+### Different types of erros
+* Compile time error
+* Runtime error
+* Logical error
+
+### Exceptions in java
+Exception is an unwanted or unexpected event, which occurs during the execution of a program. Exceptions can be caught and handled by the program. When an exception is occurs within a method, it creates an object. This object is called the exception object. It contains information about the exception, such as the name and description of the exception and the state of the program when the execution occurred.
+
+Major reasons why an exception occurs:
+* Invalid user input
+* Device failure
+* Loss of network connection
+* Physical limitations
+* Code errors
+* Out of bound
+* Null reference
+* Type mismatch
+* Opening an unavailable file
+* Database errors
+* Arithmetic errors
+
+Difference between errors and exceptions:
+An error indicates a serious problem that a reasonable application should not try to catch. Exception indicates conditions that a reasonable application might try to catch.
+
+Two types of exceptions:
+1. User-defined exceptions
+2. Built-in exceptions
+    * Checked exceptions
+    * Unchecked exceptions
+
+### Exception handling in java
+Java provides five keywords that are used to handle the exception.
+* try -> it is used to specify a block where we should place an exception code.
+* catch -> It is used to handle the exception. 
+* finally -> It is used to execute the necessary code of the program. It is executed whether an exception is handled or not.
+* throw -> it is used to throw an exception.
+* throws -> it is used to declare exceptions. 
+
+```
+public class JavaExceptionExample {
+    public static void main(String args[]) {
+        try {
+            int data = 100/0;
+        } catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
+    }
+}
+```
