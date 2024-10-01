@@ -1081,3 +1081,41 @@ public class Demo {
     }
 }
 ```
+
+
+### Java Lambda Expression
+Lambda expressions in java represent instances of functional interfaces (interfaces with a single abstract method). 
+
+Functionalities of Lambda Expression:
+* Functional Interfaces
+```
+@FunctionalInterface
+interface FuncInterface {
+    void abstractFun(int x);
+}
+
+class Demo {
+    public static void main(String args[]) {
+        FuncInterface obj = (int x) -> System.out.println(2*x);
+
+        obj.abstractFun(5);
+    }
+}
+```
+* Code as Data
+* Class Independent
+* Pass and Execute
+
+Lambda Expression Parameters:
+* Zero Parameter
+```
+() -> System.out.println("Zero Parameter Lambda");
+```
+* Single Parameter
+```
+(p) -> System.out.println("One parameter: " + p);
+```
+* Multiple Parameter
+```
+(p1, p2) -> System.out.println("Multiple parameters: " + p1 + p2);
+```
