@@ -1206,3 +1206,13 @@ public class JavaExceptionExample {
     }
 }
 ```
+
+### Exception Hierarchy
+<img src="images/5.png" height="auto" width="auto" />
+
+### Throw Exception
+Throw keyword is used to throw an exception explicitly.
+
+```
+throw new ArithmeticException("Message");
+```
