@@ -1499,3 +1499,73 @@ public class Main {
 }
 ```
 
+### Set in java
+The set is an interface available in the java.util package. The set interface extends the Collection interface. An unordered collection or list in which duplicates are not allowed is referred to as a collection interface. The set interface is used to create the mathematical set. The set interface use collection interface's methods to avoid the insertion of the same elements.
+
+```
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Set<Integer> data = new HashSet<Integer>();
+        data.add(31);
+        data.add(21);
+
+        for(int i: data) {
+            System.out.println(i);
+        }
+
+
+        System.out.println("Data: " + data);
+
+        ArrayList<Integer> newData = new ArrayList<Integer>();
+        newData.add(91);
+        newData.add(71);
+
+        data.addAll(newData);
+        data.clear();
+
+        data.contains(91);
+        data.containsAll(newData);
+        data.hashCode();
+        data.isEmpty();
+
+        Iterator newData1 = data.iterator();
+        while(newData1.hasNext()) {
+            System.out.println(newData1.next());
+        }
+
+        data.remove(81);
+
+        data.removeAll(newData);
+
+        data.size();
+    }
+}
+```
+
+
+#### Java Map Interface
+A map contains values on the basis of key, i.e. key and value pair. Each key and value pair is known as an entry. A map contains unique keys. A map is useful if you have to search, update or delete elements on the basis of a key.
+
+```
+class Main {
+    public static void main(String[] args) {
+        Map<Integer, String> map = new HashMap<Integer, String>();
+
+        map.put(100, "Amit");
+        map.put(101, "Vijay");
+
+        map.get(100);
+        map.keySet();
+
+        for(Map.Entry m: map.entrySet()) {
+            System.out.println(m.getKey() + " " + m.getValue());
+        }
+
+        for(String key: map.keySet()) {
+            System.out.println(key + " : " + map.get(key));
+        }
+    }
+}
+```
