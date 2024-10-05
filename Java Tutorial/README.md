@@ -1257,3 +1257,31 @@ class ThrowsExcep {
     }
 }
 ```
+
+
+### Java User Input
+The Scanner class is used to get user input and it is found in the java.util package.
+
+To use the Scanner class, create an object of the class and use any of the available methods found in the Scanner class, for example:
+1. nextBoolean() -> Reads a boolean value from the user
+2. nextByte() -> Reads a byte value from the user
+3. nextDouble() -> Reads a double value from the user
+4. nextFloat()
+5. nextInt()
+6. nextLine()
+7. nextLong()
+8. nextShort()
+
+```
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter username: ");
+
+        String userName = myObj.nextLine();
+        System.out.println("Username is: " + userName);
+    }
+}
+```
