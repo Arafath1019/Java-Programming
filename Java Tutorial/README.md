@@ -1443,3 +1443,59 @@ public class Main extends Thread {
     }
 }
 ```
+
+
+### Collection API in Java
+A collection (also known as a container) is a single object representing a group of objects (such as the familiar vector class). A collections API is a unified framework for representing and manipulating collections, allowing them to be manipulated independent of the details of their representation. The Java Collections API provide Java Developers with a set of classes and interfaces that makes it easier to work with collections of objects like lists, map, stacks etc.
+
+* Collection API -> Concept
+* Collection -> Interface
+* Collections -> Class
+
+The collection interface is a member of the Java Collections Framework. It is a part of java.util package. It is one of the root interface of the collection hierarchy. The collection interface is not directly implemented by any class. However, it is implemented directly via its subtypes or subinterfaces like List, Queue, Set.
+
+Collections:
+    1. List
+        * ArrayList
+        * LinkedList
+    2. Queue
+        * Dequeue
+    3. Set
+        * HashSet
+        * LinkedHashSet
+
+### ArrayList
+The ArrayList class is a resizable array, which can be found in the java.util package. The difference between a built-in array and an ArrayList in java, is that the size of an array cannot be modified. While elements can be added and removed from an ArrayList whenever you want. 
+
+```
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> cars = new ArrayList<String>();
+
+        cars.add("Volvo");
+        cars.add("BMW");
+
+        cars.add(0, "Mazda");
+
+        System.out.println(cars);
+
+        cars.get(0);
+        cars.set(0, "Opel");
+        cars.remove(0);
+        cars.size();
+
+        for(int i = 0; i< cars.size(); i++) {
+            System.out.println(cars.get(i));
+        }
+
+        for (String i: cars) {
+            System.out.println(i);
+        }
+
+        Collections.sort(cars);
+    }
+}
+```
+
