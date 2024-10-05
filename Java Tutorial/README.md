@@ -1316,3 +1316,130 @@ class CFG {
     }
 }
 ```
+
+### Thread in java
+Threads allows a program to operate more efficiently by doing multiple things at the same time. Threads can be used to perform complicated tasks in the background without interrupting the main program.
+
+Concept of Multitasking:
+To help users Operating System accommodates users the privilege of multitasking, where users can perform multiple actions simultaneously on the machine. This Multitasking can be enabled in two ways:
+1. Process Based Multitasking: In this type of Multitasking, processes are heavyweight and each process was allocated by a separate memory area. And as the process is heavyweight the cost of communication between processes is high and it takes a long time for switching between processes as it involves actions such as loading, saving in registers, updating maps, lists etc.
+2. Thread Based Multitasking: Threads are provided with lightweight nature and share the same address space and the cost of communication between threads is also low.
+
+Why Threads are used?
+Because the had the advantage of being lightweight and can provide communication between multiple threads at a low cost contributing to effective multi-tasking withing a shared memory environment.
+
+Life cycle of thread:
+1. New State: By default a Thread will be in a new state, in this state, code has not yet been run and the execution process is not yet initiated.
+2. Activate State: A thread that is a new state by default gets transferred to Active state when it invokes the start() method. threads active state contains two sub-states namely: Runnable state & Running State
+3. Waiting/Blocked State: If a thread is inactive but on a temporary time, then either it is a waiting or blocked state.
+4. Timed Waiting state: Sometimes the longer duration of waiting for threads causes starvation.
+5. Terminated State: A thread will be in Terminated State due to some reasons.
+
+What is Main Thread?
+As we are familiar, we create main method in each and every Java Program, which acts as an entry point for the code to get executed by JVM, similarly, in this multithreading concept, each program has one main thread which was provided by default by JVM, hence whenever a program is being created in java, JVM provides the Main thread for its execution.
+
+
+There are two ways to create a thread. 
+1. It can be created by extending the Thread class and overriding its run() method.
+```
+public class Main extends Thread {
+    public void run() {
+        System.out.println("This code is running in a thread");
+    }
+}
+```
+
+2. Another way to create a thread is to implement the Runnable interface
+```
+public class Main implements Runnable {
+    public void run() {
+        System.out.println("This code is running in a thread");
+    }
+}
+```
+
+Running Threads
+1. If the class extends Thread class, the Thread can be run by creating an instance of the class and call its start() method.
+```
+public class Main extends Thread {
+    public static void main(String[] args) {
+        Main thread = new Main();
+
+        thread.start();
+        System.out.println("This code is outside of the thread");
+    }
+
+    public void run() {
+        System.out.println("This code is running in a thread");
+    }
+}
+```
+
+2. If the class implements the Runnable interface, the thread can be run by passing an instance of the class to a Thread object's constructor and then calling the threads start() method.
+```
+public class Main implements Runnable {
+    public static void main(String[] args) {
+        Main obj = new Main();
+        Thread thread = new Thread(obj);
+        thread.start();
+        System.out.println("This code is outside of the thread");
+    }
+
+    public void run() {
+        System.out.println("This code is running in a thread");
+    }
+}
+```
+
+Difference between extending and implementing threads:
+The major difference is that when a class extends the Thread class, you cannot extend any other class, but by implementing the Runnable interface, it is possible to extend from another class as well.
+
+
+Concurrency Problem:
+Because threads run at the same time as other part of the program, there is no way to know in which order the code will run. When the threads and main program are reading and writing the same variables, the values are unpredictable. The problems that result from this are called concurrency problems.
+
+A code example where the value of the variable amount is unpredictable:
+```
+public class Main extends Thread {
+    public static int amount = 0;
+
+    public static void main(String[] args) {
+        Main thread = new Main();
+
+        thread.start();
+        System.out.println(amount);
+        amount++;
+        System.out.println(amount);
+    }
+
+    public void run() {
+        amount++;
+    }
+}
+```
+
+To avoid concurrency problems, it is best to share as few attributes between threads as possible. If attributes need to be shared, one possible solution is to use the isAlive() method of the thread to check whether the thread has finished running before using any attributes that the thread can change.
+
+```
+public class Main extends Thread {
+    public static int amount = 0;
+
+    public static void main(String[] args) {
+        Main thread = new Main();
+
+        thread.start();
+
+        while(thread.isAlive()) {
+            System.out.println("Waiting ....");
+        }
+
+        System.out.println("Main: " + amount);
+        amount++;
+        System.out.println("Main: " + amount);
+    }
+
+    public void run() {
+        amount++;
+    }
+}
+```
