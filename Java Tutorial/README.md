@@ -1285,3 +1285,34 @@ class Main {
     }
 }
 ```
+
+### Try-with-resources in java
+In java, the Try-with-resources statement is a try statement that declares one or more resources in it. A resources is an object that must be closed once your program is done using it. For example, a file resource or a Socket connection resource. The try-with-resources statement ensures that each resource is closed at the end of the statement execution. If we don't close the resources, it mat constitute a resource leak and also the program could exhaust the resources available to it.
+
+Syntax: 
+```
+try(declare resources here) {
+
+} catch(FileNotFoundException e) {
+
+}
+```
+
+For example:
+```
+import java.io.*;
+
+class CFG {
+    public static void main(String[] args) {
+        try(FileOutputStream fos = new FileOutputStream("gfgtextfile.txt")) {
+            String text = "Hello world. This is java program.";
+
+            byte arr[] = text.getBytes();
+
+            fos.write(arr);
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
