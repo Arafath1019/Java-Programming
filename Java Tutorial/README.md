@@ -1569,3 +1569,140 @@ class Main {
     }
 }
 ```
+
+
+### Comparator vs Comparable
+1. Comparator: It is an interface in Java used to define custom or multiple comparison strategies for objects of a class. 
+It provides the compare(T o1, T o2) method, which compares two objects passes as arguments.
+Purpose of this is to provide a flexible way to compare objects.
+
+2. Comparable: It is an interface in Java used to define the natural ordering of objects of a class.
+It provides a single method, compareTo(T o) that must be implemented by the class that implements this interface. This method compares the current object with the specified object to determine their order. 
+Purpose is to impose a natural order on the objects of a class.
+
+
+```
+public class Demo {
+    public static void main(String[] args) {
+        List<Integer> nums = new ArrayList<>();
+
+        nums.add(4);
+        nums.add(3);
+        nums.add(7);
+        nums.add(9);
+
+        Collections.sort(nums);
+        System.out.println(nums);
+    }
+}
+```
+
+
+```
+public class Demo {
+    public static void main(String arg[]) {
+
+        Comparator<Integer> com = new Comparator<Integer>() {
+            public int compare(Integer i, Integer j) {
+                if(i%10 > j%10) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        }
+
+        List<Integer> nums = new ArrayList<>();
+        nums.add(43);
+        nums.add(31);
+        nums.add(72);
+
+        Collections.sort(nums, com);
+        System.out.println(nums);
+    }
+}
+```
+
+
+```
+class Student {
+    int age;
+    String name;
+
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Student [age=" + age + ", name=" + name + "]";
+    }
+}
+
+public class Demo {
+    public static void main(String arg[]) {
+
+        Comparator<Student> com = new Comparator<Student>() {
+            public int compare(Student i, Student j) {
+                if(i.age > j.age) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        }
+
+
+        List<Student> studs = new ArrayList<>();
+        studs.add(new Student(21, "Navin"));
+        studs.add(new Student(12, "John"));
+        studs.add(new Student(18, "Parul"));
+
+        Collections(studs, com);
+
+        for(Student s : studs){
+            System.out.println(s);
+        }
+    }
+}
+```
+
+
+```
+class Student implements Comparable<Student> {
+    int age;
+    String name;
+
+    public Student(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "Student [age" + age + ", name=" + name + "]";
+    }
+
+    public int compareTo(Student that) {
+        if(this.age > that.age) {
+            return 1;
+        } else {
+            return -1;
+        }
+    }
+}
+
+public class Demo {
+    public static void main(String arg[]) {
+        List<Student> studs = new ArrayList<>();
+
+        studs.add(new Student(21, "Navin"));
+        studs.add(new Student(12, "John"));
+        studs.add(new Student(18, "Parul"));
+
+        Collections.sort(studs);
+        for(Student s : studs) {
+            System.out.println(s);
+        }
+    }
+}
+```
