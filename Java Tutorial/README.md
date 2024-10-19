@@ -1706,3 +1706,44 @@ public class Demo {
     }
 }
 ```
+
+
+### Stream in Java
+Stream API is used to process collections of objects. A stream in Java is a sequence of objects that supports various methods that can be pipelined to produce the desired result.
+
+Use of stream in Java:
+* Stream API is a way tp express and process collections of objects.
+* Enable us to perform operations like filtering, mapping, reducing and sorting.
+
+```
+public class Demo {
+    public static void main(String a[]) {
+        List<Integer> nums = Arrays.asList(2,3,8,5,3,9);
+
+        Stream<Integer> s1 = nums.stream();
+        Stream<Integer> s2 = s1.filter(n -> n%2 == 0);
+        Stream<Integer> s3 = s2.map(n -> n*2);
+        int result = s3.reduce(0, (c, e) -> c + e);
+
+        System.out.println(result);
+
+        int result = nums.stream()
+                         .filter(n -> n%2 == 0)
+                         . map(n -> n*2)
+                         .reduce(0, (c,e) -> c+e);
+
+        System.out.println(result);
+    }
+}
+```
+
+### forEach method
+```
+public class Demo {
+    public static void main(String a[]) {
+        List<Integer> nums = Arrays.asList(4,3,5,7,9);
+
+        nums.forEach(n -> System.out.println(n));
+    }
+}
+```
